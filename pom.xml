@@ -32,6 +32,11 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.21.0</version>
+        </dependency>
 
         <dependency>
             <groupId>com.browserstack</groupId>
@@ -110,6 +115,38 @@
                         <configuration>
                             <suiteXmlFiles>
                                 <suiteXmlFile>config/sample-test.testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                            <argLine>
+                                -javaagent:${com.browserstack:browserstack-java-sdk:jar}
+                            </argLine>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.diffplug.spotless</groupId>
+                        <artifactId>spotless-maven-plugin</artifactId>
+                        <version>2.43.0</version> <!-- Use the latest version -->
+                        <configuration>
+                            <java>
+                                <googleJavaFormat>
+                                    <version>1.17.0</version> <!-- Use the latest version -->
+                                </googleJavaFormat>
+                            </java>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>spanish-news-website-test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>config/spanish-news-website-test.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                             <argLine>
                                 -javaagent:${com.browserstack:browserstack-java-sdk:jar}
