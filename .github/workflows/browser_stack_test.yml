@@ -17,9 +17,13 @@ jobs:
           local-identifier: random
       # The next 3 steps are for building the web application to be tested and starting the web server on the runner environment
       - name: 'Checkout the repository'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+      - name: List files
+        run: ls -la
       - name: 'Building web application to be tested'
-        run: npm install
+        run: |
+          cd runSeleniumTestOnBrowserStack
+          npm install
       - name: 'Running application under test'
         run: ./node_modules/.bin/http-server -p 8099 &
       - name: 'Running test on BrowserStack'  # Invokes the actual test script that would run on BrowserStack browsers
