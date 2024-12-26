@@ -15,10 +15,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
-      max-parallel: 3
+      max-parallel: 5
       matrix:
-        java: [ '8', '11', '17' ]
+        java: [  '17' ]
         os: [ 'macos-latest', 'windows-latest', 'ubuntu-latest' ]
+#        device: [ 'android', 'ios' ] # Add mobile devices here
     name: TestNG Repo ${{ matrix.Java }} - ${{ matrix.os }} Sample
     env:
       BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -64,6 +65,27 @@ jobs:
         run: |
           mvn compile
           mvn test -P sample-test
+#      # Android setup
+#      - name: Setup Android Environment
+#        if: matrix.device == 'android'
+#        uses: reactivecircus/android-emulator-runner@v2
+#        with:
+#          api-level: 30
+#          target: default
+#          arch: x86_64
+#          profile: Pixel_4
+#          script: |
+#            ./gradlew test # Replace with your Android test command
+#
+#      # iOS setup
+#      - name: Setup iOS Environment
+#        if: matrix.device == 'ios'
+#        run: |
+#          xcodebuild -project YourProject.xcodeproj \
+#            -scheme YourScheme \
+#            -sdk iphonesimulator \
+#            -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.5' \
+#            test
       - if: always()
         uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975
         id: status-check-completed

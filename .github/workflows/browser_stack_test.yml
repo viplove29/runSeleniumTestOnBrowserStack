@@ -1,5 +1,10 @@
 name: 'BrowserStack Test'
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: 'The full commit id to build'
+        required: true
 jobs:
   ubuntu-job:
     name: 'BrowserStack Test on Ubuntu'
@@ -10,11 +15,11 @@ jobs:
         with:
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-      - name: 'BrowserStack Local Tunnel Setup'  # Invokes the setup-local action
-        uses: browserstack/github-actions/setup-local@master
-        with:
-          local-testing: start
-          local-identifier: random
+#      - name: 'BrowserStack Local Tunnel Setup'  # Invokes the setup-local action
+#        uses: browserstack/github-actions/setup-local@master
+#        with:
+#          local-testing: start
+#          local-identifier: random
       # The next 3 steps are for building the web application to be tested and starting the web server on the runner environment
       - name: 'Checkout the repository'
         uses: actions/checkout@v2
