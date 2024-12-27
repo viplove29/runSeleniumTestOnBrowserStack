@@ -126,6 +126,7 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 ---
 
 This structure allows for better code organization, scalability, and reusability. Each module serves a specific purpose and ensures that the code adheres to the principles of clean architecture.
+- Maven command to run the test  :  mvn test -P spanish-news-website-test
 
 ## Notes
 * You can view your test results on the [BrowserStack Automate dashboard](https://www.browserstack.com/automate)
