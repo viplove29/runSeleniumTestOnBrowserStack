@@ -28,7 +28,8 @@ public class SpanishNewsWebsitePage {
       WebElement acceptButton =
           wait.until(
               ExpectedConditions.elementToBeClickable(
-                  By.xpath("//*[starts-with(translate(text(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 'ACCEPT')]")));
+                  By.xpath(
+                      "//*[starts-with(translate(text(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 'ACCEPT')]")));
       acceptButton.click();
     } catch (Exception e) {
       System.out.println("Cookies popup not displayed or already handled.");

@@ -10,9 +10,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 import org.example.config.ConfigReader;
 
-public  class TranslationService {
+public class TranslationService {
   public static String translateText(String text) throws IOException {
-    String apiKey = ConfigReader.get("apiKey");
+    String apiKey = ApiKeyUtil.getGoogleApiKey();
+    //  String apiKey = ConfigReader.get("apiKey");
     String baseUri = ConfigReader.get("baseUri");
     String sourceLang = ConfigReader.get("sourceLanguage");
     String targetLang = ConfigReader.get("targetLanguage");

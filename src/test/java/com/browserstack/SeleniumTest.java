@@ -21,7 +21,7 @@ public class SeleniumTest {
     final JavascriptExecutor jse = (JavascriptExecutor) driver;
     JSONObject executorObject = new JSONObject();
     JSONObject argumentsObject = new JSONObject();
-    argumentsObject.put("name", "Sample Test Case Name");
+    argumentsObject.put("name", "Test Spanish News Website");
     executorObject.put("action", "setSessionName");
     executorObject.put("arguments", argumentsObject);
     jse.executeScript(String.format("browserstack_executor: %s", executorObject));

@@ -54,6 +54,8 @@ jobs:
           distribution: 'temurin'
           java-version: ${{ matrix.java }}
       - name: Run mvn test
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
           mvn compile
           mvn test

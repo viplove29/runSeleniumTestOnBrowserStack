@@ -34,14 +34,22 @@ platforms:
     osVersion: 11
     browserName: Chrome
     browserVersion: latest
-#  - os: Windows
-#    osVersion: 11
-#    browserName: Firefox
-#    browserVersion: latest
-#  - deviceName: iPhone 15 Pro Max
-#    osVersion: 17
-#    browserName: safari
-#    deviceOrientation: portrait
+  - os: Windows
+    osVersion: 10
+    browserName: Chrome
+    browserVersion: 120.0
+  - os: Windows
+    osVersion: 11
+    browserName: Firefox
+    browserVersion: latest
+  - deviceName: OnePlus 11R
+    osVersion: 13.0
+    browserName: chrome
+    deviceOrientation: portrait
+  - deviceName: iPhone 15 Pro Max
+    osVersion: 17
+    browserName: safari
+    deviceOrientation: portrait
     
 # =======================
 # Parallels per Platform

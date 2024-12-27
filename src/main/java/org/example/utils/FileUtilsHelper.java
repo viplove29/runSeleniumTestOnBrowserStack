@@ -33,6 +33,7 @@ public class FileUtilsHelper {
 
       System.out.println("Title: " + title);
       System.out.println("Content: " + content);
+      System.out.println("----------------------");
 
       titles.add(title);
       saveArticleImage(article, imageDir, i);
@@ -63,6 +64,7 @@ public class FileUtilsHelper {
         // Download and save the image
         FileUtils.copyURLToFile(new URL(imgUrl), imageFile);
         System.out.println("Saved image: " + imageFile.getAbsolutePath());
+        System.out.println("------------------------------------------");
       }
     } catch (Exception e) {
       System.out.println("Error saving article image: " + e.getMessage());
