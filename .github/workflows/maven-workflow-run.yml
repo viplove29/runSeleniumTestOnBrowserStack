@@ -19,7 +19,7 @@ jobs:
       matrix:
         java: [  '17' ]
         os: [ 'macos-latest', 'windows-latest', 'ubuntu-latest' ]
-#        device: [ 'android', 'ios' ] # Add mobile devices here
+        device: [ 'android', 'ios' ] # Add mobile devices here
     name: TestNG Repo ${{ matrix.Java }} - ${{ matrix.os }} Sample
     env:
       BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -56,17 +56,21 @@ jobs:
       - name: Run mvn test
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+#        run: |
+#          mvn compile
+#          mvn test
+#      - name: Run mvn profile sample-local-test
+#        run: |
+#          mvn compile
+#          mvn test -P sample-local-test
+#      - name: Run mvn profile sample-test
+#        run: |
+#          mvn compile
+#          mvn test -P sample-test
+      - name: Run mvn profile spanish-news-website-test
         run: |
           mvn compile
-          mvn test
-      - name: Run mvn profile sample-local-test
-        run: |
-          mvn compile
-          mvn test -P sample-local-test
-      - name: Run mvn profile sample-test
-        run: |
-          mvn compile
-          mvn test -P sample-test
+          mvn test -P spanish-news-website-test
 #      # Android setup
 #      - name: Setup Android Environment
 #        if: matrix.device == 'android'
