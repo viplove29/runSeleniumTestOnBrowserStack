@@ -119,4 +119,4 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
     - Cross-Browser Testing:
     - Run the solution locally to verify functionality.
     - Once validated, execute the solution on BrowserStack across 5 parallel threads, testing across a combination of desktop and mobile browsers.
-    - DEmo Video link : demoVideo
+    - DEmo Video link : [demoVideo](https://github.com/viplove29/runSeleniumTestOnBrowserStack/tree/master/demoVideo)
