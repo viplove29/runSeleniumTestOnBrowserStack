@@ -13,6 +13,7 @@
 - Install dependencies `mvn compile`
 - To run the test suite having cross-platform with parallelization, run `mvn test -P sample-test`
 - To run local tests, run `mvn test -P sample-local-test`
+- To run test over spanish news website , run mvn test -P spanish-news-website-test
 
 Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
 
