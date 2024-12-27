@@ -1,6 +1,6 @@
 package com.browserstack;
 
-import browserstack.shaded.org.json.JSONObject;
+import org.json.JSONObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
