@@ -95,7 +95,7 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 
 * Install dependencies `gradle build`
 
-##Folder Structure :
+## Folder Structure :
 
 ## Detailed Component Description  
 
@@ -117,8 +117,8 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 - **`test-data`**: Directory to store test data files (if needed for testing purposes).
 
 ### `src/test/java/org/example/tests`
-- **`BaseTest.java`**: Abstract base class defining shared setup and teardown logic for test cases.
-- **`BStackDemoTest.java`**: Test class containing test methods for verifying functionality.
+- **`SeleniumTest.java`**: Abstract base class defining shared setup and teardown logic for test cases.
+- **`BStackDemoSpanishNewsWebsiteTest.java`**: Test class containing test methods for verifying functionality.
 
 ### `src/test/resources`
 - Directory to store resources specific to testing, such as mock data or other auxiliary files.
