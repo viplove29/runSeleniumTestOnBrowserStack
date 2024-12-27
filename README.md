@@ -95,27 +95,59 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 
 * Install dependencies `gradle build`
 
+## Folder Structure :
+
+## Detailed Component Description  
+
+### `src/main/java/org/example/config`
+- **`ConfigReader.java`**: Utility class for reading configuration values from `config.properties`.
+
+### `src/main/java/org/example/pages`
+- **`SpanishNewsWebsitePage.java`**: Page Object Model (POM) class encapsulating methods to interact with elements on the Spanish news website.
+
+### `src/main/java/org/example/utils`
+- **`TranslationService.java`**: Utility for translating text using the Google Translation API.
+- **`FileUtilsHelper.java`**: Helper utility for file-related operations like saving images or handling directories (if required).
+
+### `src/main/java/org/example/models`
+- **`TranslationResponse.java`**: (Optional) Model class for deserializing translation API responses into Java objects.
+
+### `src/main/resources`
+- **`config.properties`**: Centralized configuration file containing API keys, base URIs, and other constants.
+- **`test-data`**: Directory to store test data files (if needed for testing purposes).
+
+### `src/test/java/org/example/tests`
+- **`SeleniumTest.java`**: Abstract base class defining shared setup and teardown logic for test cases.
+- **`BStackDemoSpanishNewsWebsiteTest.java`**: Test class containing test methods for verifying functionality.
+
+### `src/test/resources`
+- Directory to store resources specific to testing, such as mock data or other auxiliary files.
+
+---
+
+This structure allows for better code organization, scalability, and reusability. Each module serves a specific purpose and ensures that the code adheres to the principles of clean architecture.
 
 ## Notes
 * You can view your test results on the [BrowserStack Automate dashboard](https://www.browserstack.com/automate)
 
 * Problem Statement :
 * Visit the website El País, a Spanish news outlet.
-    Ensure that the website's text is displayed in Spanish.
-    Scrape Articles from the Opinion Section:
-    Navigate to the Opinion section of the website.
-    Fetch the first five articles in this section.
-    Print the title and content of each article in Spanish.
-    If available, download and save the cover image of each article to your local machine.
-    Translate Article Headers:
-    Use a translation API of your choice, such as:
-    Google Translate API
-    Rapid Translate Multi Traduction API
-    Translate the title of each article to English.
-    Print the translated headers.
-    Analyze Translated Headers:
-    From the translated headers, identify any words that are repeated more than twice across all headers combined.
-    Print each repeated word along with the count of its occurrences.
-    Cross-Browser Testing:
-    Run the solution locally to verify functionality.
-    Once validated, execute the solution on BrowserStack across 5 parallel threads, testing across a combination of desktop and mobile browsers.
+    - Ensure that the website's text is displayed in Spanish.
+    - Scrape Articles from the Opinion Section:
+    - Navigate to the Opinion section of the website.
+    - Fetch the first five articles in this section.
+    - Print the title and content of each article in Spanish.
+    - If available, download and save the cover image of each article to your local machine.
+    - Translate Article Headers:
+    - Use a translation API of your choice, such as:
+    - Google Translate API
+    - Rapid Translate Multi Traduction API
+    - Translate the title of each article to English.
+    - Print the translated headers.
+    - Analyze Translated Headers:
+    - From the translated headers, identify any words that are repeated more than twice across all headers combined.
+    - Print each repeated word along with the count of its occurrences.
+    - Cross-Browser Testing:
+    - Run the solution locally to verify functionality.
+    - Once validated, execute the solution on BrowserStack across 5 parallel threads, testing across a combination of desktop and mobile browsers.
+    - DEmo Video link : [demoVideo](https://github.com/viplove29/runSeleniumTestOnBrowserStack/tree/master/demoVideo)
